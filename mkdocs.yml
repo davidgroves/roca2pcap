@@ -1,0 +1,7 @@
+site_name: Python-VSCode-Template
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
