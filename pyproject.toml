@@ -3,21 +3,21 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "python_vscode_template2"
+name = "roca2pcap"
 authors = [{name = "David Groves", email = "github@fibrecat.org"}]
 dynamic = ["version", "description"]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 license = {file = "LICENSE"}
 
 [project.scripts]
-my_script = "python_vscode_template2.my_script:main"
+my_script = "roca2pcap.my_script:main"
 
 [project.urls]
-Home = "https://github.com/davidgroves/Python-VSCode-Template2"
+Home = "https://github.com/davidgroves/roca2pcap"
 
 [tool.flit.module]
-name = "python_vscode_template2"
+name = "roca2pcap"
 
 [tool.mypy]
 mypy_path = "src"
