@@ -1,10 +1,11 @@
+import argparse
 import base64
 import dataclasses
 import pathlib
 import sys
 import typing
 
-import macaddress
+import macaddress  # type: ignore
 import scapy.all as scapy  # type: ignore
 
 
@@ -101,11 +102,16 @@ def read_file(filename: pathlib.Path) -> typing.Generator[Packet, None, None]:
         for line in f:
             yield Packet.from_string(line)
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Convert a roca file to a pcap file.")
+    parser.add_argument("--input", type=pathlib.Path, help="The input roca file. example: input.roca")
+    parser.add_argument("--output", type=pathlib.Path, help="The output pcap file. example: output.pcap")
+    return parser.parse_args()
 
 def main():
-    output_filename = "output.pcap"
-    with scapy.PcapWriter(filename=output_filename) as writer:
-        for packet in read_file("input.roca"):
+    args = parse_args()
+    with scapy.PcapWriter(filename=str(args.output)) as writer:
+        for packet in read_file(str(args.input)):
             writer.write(packet.to_scapy())
 
 
