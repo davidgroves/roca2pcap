@@ -1,6 +1,5 @@
 import pytest
 import roca2pcap.roca2pcap as r2p
-import scapy.all as scapy
 
 @pytest.fixture
 def ping_test_packet():
