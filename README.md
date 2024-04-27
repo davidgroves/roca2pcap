@@ -18,8 +18,12 @@ There is no official documentation, but it appears to be.
 - `<ETHERTYPE>` is the ieee802 ethernet type in decimal (so 2048 = 0x0800 = IPv4)
 - `<PACKET>` is the raw bytes of the packet, encoded in Base64 format.
 
+This program converts the roca file to a pcap file, which can be read by tcpdump, wireshark, etc.
+
 ## Usage.
 
-
-
-
+```bash
+$ roca2pcap --input sample_input.roca --output output.pcap
+$ tcpdump -r output.pcap
+14:13:38.223000 IP dns.google > 172.27.3.157: ICMP echo reply, id 39924, seq 3, length 64
+```
