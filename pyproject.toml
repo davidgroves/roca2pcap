@@ -23,9 +23,8 @@ name = "roca2pcap"
 mypy_path = "src"
 
 [tool.pytest.ini_options]
-testpaths = [
-    "tests",
-]
+pythonpath = ["src"]
+testpaths = ["tests"]
 
 # [tool.black]
 # line-length = 132

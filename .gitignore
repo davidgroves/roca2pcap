@@ -164,3 +164,6 @@ cython_debug/
 
 # Ruff's Cache for linting/formatting
 .ruff_cache
+
+# Output pcap
+output.pcap
