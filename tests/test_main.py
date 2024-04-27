@@ -1,6 +1,7 @@
 import pytest
 import roca2pcap.roca2pcap as r2p
 
+
 @pytest.fixture
 def ping_test_packet():
     return "1714050818223,0,0,2048,qrvM3e7/dKy5qFyfCABFAABUAAAAAHMBh+EICAgIrBsDnQAAAbeb9AADGK8qZgAAAABZaQcAAAAAABAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc="
@@ -53,6 +54,6 @@ def test_src_in_text_matches_packet(ping_test_packet):
     packet = r2p.Packet.from_string(ping_test_packet)
     print(packet.srcmac)
     print(type(packet.srcmac))
-    
+
     assert packet.srcmac.replace("-", ":") == packet.to_scapy().src
-    
+

@@ -1,10 +1,10 @@
 import base64
 import dataclasses
-import macaddress
 import pathlib
 import sys
 import typing
 
+import macaddress
 import scapy.all as scapy  # type: ignore
 
 
@@ -29,11 +29,11 @@ class Packet:
     @property
     def srcmac(self) -> str:
         return str(macaddress.MAC(self.srcmac_bytes)).replace("-", ":")
-        
+
     @property
     def dstmac(self) -> str:
         return str(macaddress.MAC(self.dstmac_bytes)).replace("-", ":")
-    
+
 
     @property
     def l3payload(self) -> bytes:
